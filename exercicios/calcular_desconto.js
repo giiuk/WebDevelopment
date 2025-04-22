@@ -1,16 +1,15 @@
-const readLine = require("readline").createInterface({
+const realine = require('readline').createInterface({
     input: process.stdin,
-    output: process.stdout,
-});
-readLine.question("Digite o valor total da conta: ", (valor) => {
-    if (!isNaN(valor)) {
-        if (valor > 100) {
-            desconto = valor * 0.1;
-            final = valor - desconto
-            console.log(`Seu valor tem um desconto de R$${desconto}.\nO valor final é de: ${final}`);
-        } else {
-            console.log(`Seu valor é de R$${valor}.`);
-        }
+    output: process.stdout
+})
+
+realine.question("Digite o valor da sua compra: ", (valorCompra)=>{
+    if(valorCompra > 100){
+         desconto = valorCompra * 0.1
+         valorFinal = valorCompra - desconto
+        console.log(`Você recebeu um desconto de R$${desconto} na sua compra.\nO valor final é de R$${valorFinal}`)
+    } else{
+        console.log(`Você recebeu NÃO recebeu desconto na sua compra.\nO valor final é de R$${valorCompra}`)
     }
-    readLine.close();
+    realine.close()
 })

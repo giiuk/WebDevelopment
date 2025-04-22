@@ -1,16 +1,19 @@
-const readLine = require("readline").createInterface({
-    input: process.stdin,
+const readline = require('readline').createInterface({
+    input : process.stdin,
     output: process.stdout
-});
+})
+
 const usuario = "gigi"
-const senha = "giovanna"
-readLine.question("Digite o nome de usuario: ", (input_usuario) => {
-    readLine.question("Digite sua senha: ", (input_senha) => {
-        if (input_usuario == usuario || input_senha == senha) {
-            console.log(`Bem vinda, ${usuario}`)
-        } else {
-            console.log("Usuário ou senha incorretos.")
+const senha = "aocoisaboa"
+readline.question("Digite seu nome de usuário:", (inputUser) =>{
+    readline.question("Digite sua senha: ", (inputSenha) =>{
+        
+        if (inputUser == usuario && inputSenha == senha){
+            console.log(`Login bem sucedido.\nBem vinda, ${usuario}!`)
+        }else{
+            console.log("Credenciais Inválidas.")
         }
-        readLine.close()
+        readline.close()
     })
+
 })
